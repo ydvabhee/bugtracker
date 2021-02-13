@@ -1,6 +1,5 @@
 import React from 'react'
-import {Button, Container, CssBaseline, Grid, makeStyles, TextField, Typography, InputAdornment, IconButton, Icon,Link} from '@material-ui/core'
-import Paper from '@material-ui/core/Paper'
+import {Button,Paper, Container, CssBaseline, Grid, makeStyles, TextField, Typography, InputAdornment, IconButton, Icon,Link} from '@material-ui/core'
 import {AccountCircleRounded, PersonRounded, Visibility, VisibilityOff} from '@material-ui/icons'
 
 
@@ -59,6 +58,7 @@ const Login = (props) =>
     return(
          <Container>
              <CssBaseline>
+                 <form>
                  <Grid container className={classes.login_form_container} >
                      <Grid item xs = '4'>
                         <Paper className= {classes.login_form}>
@@ -106,8 +106,8 @@ const Login = (props) =>
                             <Typography color="textSecondary" style={{marginBlock:'5px'}}>
                                 <Link href="#"
 
-                                color='textSecondary'
-                                underline='none'>
+color='textSecondary'
+underline='none'>
                                 Forgot password?
                                 </Link>
                                 </Typography>
@@ -129,6 +129,7 @@ const Login = (props) =>
                         </Paper>
                      </Grid>
                  </Grid>
+                </form>
              </CssBaseline>
          </Container>
     )
