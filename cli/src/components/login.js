@@ -60,7 +60,7 @@ const Login = (props) =>
              <CssBaseline>
                  <form>
                  <Grid container className={classes.login_form_container} >
-                     <Grid item xs = '4'>
+                     <Grid item xs="12" sm='8' md='6' lg='4'>
                         <Paper className= {classes.login_form}>
                             <Icon>
                                 <AccountCircleRounded color='primary' style={{fontSize:48, justifyContent:'center'}}/>

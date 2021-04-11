@@ -23,8 +23,11 @@ const useStyle = makeStyles({
         marginBottom:'8px'
     },
 
+    margin10:{
+        marginBlock:'10px'
+    },
+
     textfield: {
-        marginBlock:"8px",
         borderRadius:'50%',
 
 
@@ -51,7 +54,7 @@ const Register = () => {
             <CssBaseline>
                 <form>
                     <Grid container className={classes.reg_form_container}>
-                        <Grid item xs="4">
+                        <Grid item xs="12" sm='8' md='6' lg='5'>
                             <Paper className={classes.reg_form}>
                                 <div style={{marginBottom:'15px'}}>
                                     <Typography variant='h5'>
@@ -61,22 +64,50 @@ const Register = () => {
                                         Fill up the form to continue
                                     </Typography>
                                 </div>
-                                <div>
+                                <div style={{marginBlock:'10px'}}>
+                                <TextField
+                                     name='invitation_code'
+                                     variant='outlined'
+                                     label='Invitation Code'
+                                     type='text'
+                                     required
+                                     autoFocus
+                                     fullWidth
+                                     ></TextField>
+                                     <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >invalid invitation code</Typography>
+                                     <Typography
+                                     color='textSecondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >You need Invitation code to sign up</Typography>
+                                </div>
+                                <div className={classes.margin10}>
                                 <TextField
                                 className={classes.textfield}
                                 label='Name'
                                 variant='outlined'
                                 type='text'
                                 fullWidth></TextField>
+                                <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >invalid name</Typography>
                                 </div>
-                                <div>
+                                <div className={classes.margin10}>
                                 <TextField
                                 className={classes.textfield}
                                 label='Email'
                                 variant='outlined'
                                 type='text'
                                 fullWidth></TextField>
+                               <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >invalid email</Typography>
                                 </div>
+
                                 <div>
                                 <TextField
                                 className={classes.textfield}
@@ -84,14 +115,39 @@ const Register = () => {
                                 variant='outlined'
                                 type='password'
                                 fullWidth></TextField>
+                                <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >Password should contain :- </Typography>
+                                <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >at least a number </Typography>
+                                     <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >at least a capital letter</Typography>
+                                     <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     >at least a small letter</Typography>
+                                     <Typography
+                                     color='secondary'
+                                     style={{paddingLeft:'5px'}}
+                                     > at least a special characters  </Typography>
                                 </div>
-                                <div>
+
+                                <div className={classes.margin10}>
                                 <TextField
                                 className={classes.textfield}
                                 label='Confirm Password'
                                 variant='outlined'
                                 type='password'
                                 fullWidth></TextField>
+                                <Typography
+                                     color='green'
+                                     style={{paddingLeft:'5px'}}
+                                     >Password matched</Typography>
                                 </div>
                                 <div>
                                 <RadioGroup row aria-lable='position' name='position' defaultValue='top'>
