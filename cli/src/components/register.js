@@ -1,6 +1,6 @@
 import React from 'react'
-import { Container, CssBaseline, FormControl, FormControlLabel, FormHelperText, FormLabel, Grid, Input, InputLabel, makeStyles, Paper, Radio, TextField, Typography,RadioGroup, Button,Link } from '@material-ui/core'
-import {} from '@material-ui/icons'
+import { Container, CssBaseline, FormControlLabel, Grid, makeStyles, Paper, Radio, TextField, Typography,RadioGroup, Button,Link } from '@material-ui/core'
+
 
 
 
@@ -64,7 +64,7 @@ const Register = () => {
                                         Fill up the form to continue
                                     </Typography>
                                 </div>
-                                <div style={{marginBlock:'10px'}}>
+                                {/* <div style={{marginBlock:'10px'}}>
                                 <TextField
                                      name='invitation_code'
                                      variant='outlined'
@@ -82,7 +82,7 @@ const Register = () => {
                                      color='textSecondary'
                                      style={{paddingLeft:'5px'}}
                                      >You need Invitation code to sign up</Typography>
-                                </div>
+                                </div> */}
                                 <div className={classes.margin10}>
                                 <TextField
                                 className={classes.textfield}
@@ -90,10 +90,10 @@ const Register = () => {
                                 variant='outlined'
                                 type='text'
                                 fullWidth></TextField>
-                                <Typography
+                                {/* <Typography
                                      color='secondary'
                                      style={{paddingLeft:'5px'}}
-                                     >invalid name</Typography>
+                                     >invalid name</Typography> */}
                                 </div>
                                 <div className={classes.margin10}>
                                 <TextField
@@ -102,10 +102,10 @@ const Register = () => {
                                 variant='outlined'
                                 type='text'
                                 fullWidth></TextField>
-                               <Typography
+                               {/* <Typography
                                      color='secondary'
                                      style={{paddingLeft:'5px'}}
-                                     >invalid email</Typography>
+                                     >invalid email</Typography> */}
                                 </div>
 
                                 <div>
@@ -114,12 +114,13 @@ const Register = () => {
                                 label='Password'
                                 variant='outlined'
                                 type='password'
+
                                 fullWidth></TextField>
-                                <Typography
+                                {/* <Typography
                                      color='secondary'
                                      style={{paddingLeft:'5px'}}
-                                     >Password should contain :- </Typography>
-                                <Typography
+                                     >Password should contain :- </Typography> */}
+                                {/* <Typography
                                      color='secondary'
                                      style={{paddingLeft:'5px'}}
                                      >at least a number </Typography>
@@ -134,7 +135,7 @@ const Register = () => {
                                      <Typography
                                      color='secondary'
                                      style={{paddingLeft:'5px'}}
-                                     > at least a special characters  </Typography>
+                                     > at least a special characters  </Typography> */}
                                 </div>
 
                                 <div className={classes.margin10}>
@@ -144,10 +145,10 @@ const Register = () => {
                                 variant='outlined'
                                 type='password'
                                 fullWidth></TextField>
-                                <Typography
+                                {/* <Typography
                                      color='green'
                                      style={{paddingLeft:'5px'}}
-                                     >Password matched</Typography>
+                                     >Password matched</Typography> */}
                                 </div>
                                 <div>
                                 <RadioGroup row aria-lable='position' name='position' defaultValue='top'>
@@ -174,6 +175,7 @@ const Register = () => {
                                 </div>
                                 <div style={{marginBlock:'5px'}}>
                                     <Button
+                                    type='sumbit'
                                     variant='contained'
                                     color='primary'
                                     fullWidth>
@@ -190,6 +192,7 @@ const Register = () => {
                         </Grid>
                     </Grid>
                 </form>
+
             </CssBaseline>
         </Container>
 

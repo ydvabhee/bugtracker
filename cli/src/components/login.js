@@ -105,14 +105,14 @@ const Login = (props) =>
                             </div>
                             <Typography color="textSecondary" style={{marginBlock:'5px'}}>
                                 <Link href="#"
-
-color='textSecondary'
-underline='none'>
+                                color='textSecondary'
+                                underline='none'>
                                 Forgot password?
                                 </Link>
                                 </Typography>
                             <div>
                                 <Button
+                                type='sumbit'
                                 color="primary"
                                 className={classes.login_button}
                                 variant='contained'
