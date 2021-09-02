@@ -14,13 +14,14 @@ const {validateLoginInput,validateChangePasswordInput } = require('../../validat
 // @route api/login/
 // access Public
 // desc Login
-router.get('/',(req,res) => {
+router.post('/',(req,res) => {
 
     //validate login input
     const {errors, isValid} = validateLoginInput(req.body)
-    if(!isValid) return res.status(400).send(errors)
+    if(!isValid) return res.status(400).send({errors})
 
-    const email = req.body.email
+    const email = req.body.email.toLowerCase()
+    console.log(email);
     const password = req.body.password
 
     //find email from database
@@ -30,7 +31,8 @@ router.get('/',(req,res) => {
         //check user in database
         if(!user)
         {
-            return res.status(404).send({msg:'user not found'})
+            errors.userNotFound = 'User not found';
+            return res.status(404).send({errors})
         }
 
         //compare password
@@ -45,7 +47,6 @@ router.get('/',(req,res) => {
 
                 //jwt sign
                 jwt.sign(payload,process.env.JWT_SECRET_KEY , function (err, token) {
-
 
                     // if error occurs log it and send 400 status
                     if(err) {
@@ -64,7 +65,8 @@ router.get('/',(req,res) => {
 
             //password mismatched
             else {
-            return res.status(400).send({msg:'incorrect password'})
+                errors.password = 'Incorrect password'
+            return res.status(400).send({errors})
             }
         })
     })
@@ -119,4 +121,4 @@ router.post('/changepassword', passport.authenticate('jwt', {session:false}), (r
 
 })
 
-module.exports = router;3600
+module.exports = router;

@@ -19,11 +19,11 @@ const projectSchema = new schema({
         required:true
     },
     manager: {
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'user'
     },
     developers: [{
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'user'
     }]
 })

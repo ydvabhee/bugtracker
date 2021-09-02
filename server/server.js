@@ -5,6 +5,8 @@ const passport = require('passport')
 
 const login = require('./routes/api/login')
 const signup = require('./routes/api/signup')
+const ticket = require('./routes/api/ticket')
+const project = require('./routes/api/project')
 
 const app = express()
 
@@ -34,6 +36,8 @@ require('./config/passport')(passport)
 //routes
 app.use('/api/login',login)
 app.use('/api/signup',signup)
+app.use('/api/project',project)
+app.use('/api/ticket',ticket)
 
 // @route   /test
 // desc     testing

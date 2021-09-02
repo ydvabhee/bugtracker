@@ -25,7 +25,7 @@ router.get('/test',(req,res) => {
 // desc         Register User
 // Access       Public
 
-router.post('/submitter', (req,res)=> {
+router.post('/', (req,res)=> {
 
     //validate post data
     const {errors, isValid} = validateSignup(req.body)
@@ -36,8 +36,8 @@ router.post('/submitter', (req,res)=> {
 
         if(!id) {
             let newUser = {}
-            newUser.name = req.body.name
-            newUser.email = req.body.email
+            newUser.name = req.body.name.toLowerCase()
+            newUser.email = req.body.email.toLowerCase()
             newUser.type = 'submitter'
 
             //hashing password
@@ -60,7 +60,8 @@ router.post('/submitter', (req,res)=> {
 
        }
        else {
-           res.status(400).send({msg:"user already registered"})
+           errors.email = 'user already registered'
+           res.status(400).send({errors})
        }
     })
     .catch(err => {

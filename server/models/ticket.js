@@ -3,11 +3,11 @@ const schema = mongoose.Schema
 
 const ticketSchema = new schema({
     submitterId: {
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'user'
     },
     projectId:{
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'project'
     },
     status : {
@@ -24,7 +24,7 @@ const ticketSchema = new schema({
     },
     comments:[{
         users: {
-            type:Schema.Types.ObjectId,
+            type:schema.Types.ObjectId,
         ref:'user'
         },
         text: {
@@ -41,12 +41,16 @@ const ticketSchema = new schema({
         required:true
     },
     developers:[{
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'developer'
         }],
     project_manager : {
-        type:Schema.Types.ObjectId,
+        type:schema.Types.ObjectId,
         ref:'project_manager'
+    },
+    type: {
+        type:String,
+        required:true
     }
 
 })
